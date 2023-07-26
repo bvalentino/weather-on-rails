@@ -12,10 +12,14 @@ class WeathersController < ApplicationController
     set_zip_code
     set_country_code
 
-    @current_weather = Weather::Fetch.run!(
+    outcome = Weather::Fetch.run(
       zip_code: @zip_code,
       country_code: @country_code
     )
+
+    @current_weather = outcome.result
+    @was_cached = outcome.was_cached
+    @last_updated_at = outcome.last_updated_at
   end
 
   private

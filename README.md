@@ -35,3 +35,9 @@ $ bundle exec rspec
 ```bash
 $ bundle exec rubocop
 ```
+
+## 💽 Caching
+
+The app uses Redis to cache the weather data per country and zip code. The cache is set to expire after 30 minutes.
+
+By default, caching is disabling in the development environment. To toggle it, run `rails dev:cache`.
