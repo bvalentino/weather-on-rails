@@ -17,6 +17,11 @@ FileUtils.chdir APP_ROOT do
   system! "gem install bundler --conservative"
   system("bundle check") || system!("bundle install")
 
+  puts "\n== Copying env files =="
+  unless File.exist?(".env.local")
+    FileUtils.cp ".env.local.template", ".env.local"
+  end
+
   puts "\n== Removing old logs and tempfiles =="
   system! "bin/rails log:clear tmp:clear"
 
