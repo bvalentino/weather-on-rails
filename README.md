@@ -1,24 +1,37 @@
-# README
+# WeatherOnRails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 📦 Requirements
 
-Things you may want to cover:
+- Ruby
+- Redis
+- OpenWeatherMap API key: https://openweathermap.org/
 
-* Ruby version
+## ⚡️ Setup
 
-* System dependencies
+```bash
+$ bin/setup
+```
 
-* Configuration
+Add your OpenWeatherMap API key to the `.env.local` file
 
-* Database creation
+```bash
+OPEN_WEATHER_API_KEY=REPLACE_ME
+```
 
-* Database initialization
+## 🚀 Running
 
-* How to run the test suite
+```bash
+$ bin/rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## 🧪 Testing
 
-* Deployment instructions
+```bash
+$ bundle exec rspec
+```
 
-* ...
+## 📝 Codestyle
+
+```bash
+$ bundle exec rubocop
+```
