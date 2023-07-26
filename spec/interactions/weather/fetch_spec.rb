@@ -24,4 +24,28 @@ RSpec.describe Weather::Fetch do
       expect(described_class.run!(zip_code:)).to eq(api_response)
     end
   end
+
+  context 'when the API key is invalid' do
+    let(:api_response) do
+      'Invalid API key. Please see https://openweathermap.org/faq#error401 for more info.'
+    end
+
+    before do
+      OpenWeather::Client.configure do |c|
+        c.api_key = nil
+      end
+
+      stub_request(:get, "https://api.openweathermap.org/data/2.5/weather?zip=#{zip_code},us")
+        .to_return(
+          status: 401,
+          body: { cod: 401, message: api_response }.to_json,
+          headers: { 'Content-Type' => 'application/json' }
+        )
+    end
+
+    it 'raises an error' do
+      expect { described_class.run!(zip_code:) }
+        .to raise_error(OpenWeather::Errors::Fault, api_response)
+    end
+  end
 end
