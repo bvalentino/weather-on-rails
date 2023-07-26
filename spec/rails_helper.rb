@@ -59,7 +59,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.before(:all) do
+  config.before do
     OpenWeather::Client.configure do |c|
       c.api_key = 'dummy-api-key'
     end

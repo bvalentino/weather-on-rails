@@ -48,4 +48,22 @@ RSpec.describe Weather::Fetch do
         .to raise_error(OpenWeather::Errors::Fault, api_response)
     end
   end
+
+  context 'when the zip code is invalid' do
+    let(:api_response) { 'the server responded with status 404' }
+
+    before do
+      stub_request(:get, "https://api.openweathermap.org/data/2.5/weather?appid=#{api_key}&zip=#{zip_code},us")
+        .to_return(
+          status: 404,
+          body: { cod: 404, message: api_response }.to_json,
+          headers: { 'Content-Type' => 'application/json' }
+        )
+    end
+
+    it 'raises an error' do
+      expect { described_class.run!(zip_code:) }
+        .to raise_error(Faraday::ResourceNotFound, api_response)
+    end
+  end
 end
