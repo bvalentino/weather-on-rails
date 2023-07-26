@@ -35,6 +35,9 @@ jobs:
       - name: Rubocop
         run: bundle exec rubocop --fail-fast
 
+      - name: Build assets
+        run: bundle exec rails assets:precompile
+
       - name: Run tests
         env:
           RAILS_ENV: test
