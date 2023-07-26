@@ -1,6 +1,9 @@
-Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+# frozen_string_literal: true
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+Rails.application.routes.draw do
+  resource :weather, only: [:show] do
+    get 'current/:zip_code/:country_code', action: :current, as: :current
+  end
+
+  root "home#index"
 end

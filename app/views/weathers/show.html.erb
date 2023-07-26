@@ -1,0 +1,9 @@
+<div>
+  <%= turbo_frame_tag :current, src: [:current, :weather, zip_code: @zip_code, country_code: @country_code] do %>
+    <h1>Loading...</h1>
+    <h3>
+      <%= @zip_code %>,
+      <%= @country_code.upcase %>
+    </h3>
+  <% end %>
+</div>

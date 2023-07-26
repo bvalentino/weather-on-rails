@@ -1,0 +1,8 @@
+<div>
+  <%= form_tag :weather, method: :get, data: { turbo: false } do %>
+    <%= label_tag :zip_code, t('.form.zip_code.label') %>
+    <%= text_field_tag :zip_code %>
+
+    <%= submit_tag t('.form.submit') %>
+  <% end %>
+</div>

@@ -1,0 +1,31 @@
+<div>
+  <%= turbo_frame_tag :current do %>
+    <h1><%= @current_weather.name %></h1>
+    <h3>
+      <%= @zip_code %>,
+      <%= @country_code.upcase %>
+    </h3>
+    <div>
+      <%= t '.current_temperature' %>:
+      <%= number_with_precision @current_weather.main.temp_f, precision: 0 %> °F
+    </div>
+    <div>
+      <%= t '.high_low' %>:
+      <%= number_with_precision @current_weather.main.temp_max_f, precision: 0 %> °F
+      /
+      <%= number_with_precision @current_weather.main.temp_min_f, precision: 0 %> °F
+    </div>
+    <div>
+      <%= t '.feels_like' %>:
+      <%= number_with_precision @current_weather.main.feels_like_f, precision: 0 %> °F
+    </div>
+    <div>
+      <%= t '.humidity' %>:
+      <%= @current_weather.main.humidity %>%
+    </div>
+    <div>
+      <%= t '.pressure' %>:
+      <%= @current_weather.main.pressure %> mb
+    </div>
+  <% end %>
+</div>
