@@ -1,0 +1,18 @@
+require:
+  - rubocop-rails
+  - rubocop-capybara
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - db/**/*
+    - node_modules/**/*
+    - bin/**
+    - config/routes.rb
+    - vendor/**/*
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+Style/Documentation:
+  Enabled: false
