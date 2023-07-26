@@ -4,6 +4,8 @@ require 'rails_helper'
 
 describe 'User visits current weather page' do
   let(:zip_code) { '95014' }
+  let(:country_code) { 'us' }
+  let(:api_key) { OpenWeather::Client.new.api_key }
   let(:api_response) do
     {
       'coord' => { 'lon' => -122.0449, 'lat' => 37.318 },
@@ -22,41 +24,63 @@ describe 'User visits current weather page' do
   end
 
   before do
-    stub_request(:get, "https://api.openweathermap.org/data/2.5/weather?appid=#{OpenWeather::Client.new.api_key}&zip=#{zip_code},us")
+    stub_request(:get, "https://api.openweathermap.org/data/2.5/weather?appid=#{api_key}&zip=#{zip_code},#{country_code}")
       .to_return(
         status: 200,
         body: api_response.to_json,
         headers: { 'Content-Type' => 'application/json' }
       )
-
-    visit current_weather_path(zip_code:, country_code: 'us')
   end
 
-  it 'shows the zip code' do
-    expect(page).to have_text(zip_code)
+  context 'when the weather information is not cached' do
+    before do
+      visit current_weather_path(zip_code:, country_code:)
+    end
+
+    it 'shows the zip code' do
+      expect(page).to have_text(zip_code)
+    end
+
+    it 'shows the country code' do
+      expect(page).to have_text(country_code.upcase)
+    end
+
+    it 'shows the current temperate' do
+      expect(page).to have_text('Current temperature: 70 °F')
+    end
+
+    it 'shows the high and low' do
+      expect(page).to have_text('High/Low: 77 °F / 59 °F')
+    end
+
+    it 'shows the feels like temperature' do
+      expect(page).to have_text('Feels like: 78 °F')
+    end
+
+    it 'shows the humidity' do
+      expect(page).to have_text('Humidity: 68%')
+    end
+
+    it 'shows the pressure' do
+      expect(page).to have_text('Pressure: 1015 mb')
+    end
+
+    it 'shows that the data was not cached' do
+      expect(page).to have_text('Weather information up to date')
+    end
   end
 
-  it 'shows the country code' do
-    expect(page).to have_text('US')
-  end
+  context 'when the weather information is cached' do
+    before do
+      allow(Rails.cache).to receive(:read).and_return(
+        [Weather::Fetch.run!(zip_code:), Time.zone.now]
+      )
 
-  it 'shows the current temperate' do
-    expect(page).to have_text('Current temperature: 70 °F')
-  end
+      visit current_weather_path(zip_code:, country_code:)
+    end
 
-  it 'shows the high and low' do
-    expect(page).to have_text('High/Low: 77 °F / 59 °F')
-  end
-
-  it 'shows the feels like temperature' do
-    expect(page).to have_text('Feels like: 78 °F')
-  end
-
-  it 'shows the humidity' do
-    expect(page).to have_text('Humidity: 68%')
-  end
-
-  it 'shows the pressure' do
-    expect(page).to have_text('Pressure: 1015 mb')
+    it 'shows that the data was cached' do
+      expect(page).to have_text('Weather information last updated')
+    end
   end
 end

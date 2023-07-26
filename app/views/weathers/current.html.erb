@@ -5,7 +5,8 @@
       <%= @zip_code %>,
       <%= @country_code.upcase %>
     </h3>
-    <div>
+
+    <div class="mt-3">
       <%= t '.current_temperature' %>:
       <%= number_with_precision @current_weather.main.temp_f, precision: 0 %> °F
     </div>
@@ -26,6 +27,14 @@
     <div>
       <%= t '.pressure' %>:
       <%= @current_weather.main.pressure %> mb
+    </div>
+
+    <div class="mt-3">
+      <% if @was_cached %>
+        Weather information last updated <%= time_ago_in_words @last_updated_at %> ago
+      <% else %>
+        Weather information up to date
+      <% end %>
     </div>
   <% end %>
 </div>
