@@ -1,0 +1,611 @@
+{
+	"documentation": "https://opencagedata.com/api",
+	"licenses": [
+		{
+			"name": "see attribution guide",
+			"url": "https://opencagedata.com/credits"
+		}
+	],
+	"rate": {
+		"limit": 2500,
+		"remaining": 2499,
+		"reset": 1690502400
+	},
+	"results": [
+		{
+			"annotations": {
+				"DMS": {
+					"lat": "37° 19' 54.01092'' N",
+					"lng": "122° 1' 48.35352'' W"
+				},
+				"FIPS": {
+					"county": "06085",
+					"state": "06"
+				},
+				"MGRS": "10SEG8592232107",
+				"Maidenhead": "CM87xh69jo",
+				"Mercator": {
+					"x": -13584328.393,
+					"y": 4459524.307
+				},
+				"OSM": {
+					"edit_url": "https://www.openstreetmap.org/edit?way=114054829#map=16/37.33167/-122.03010",
+					"note_url": "https://www.openstreetmap.org/note/new#map=16/37.33167/-122.03010&layers=N",
+					"url": "https://www.openstreetmap.org/?mlat=37.33167&mlon=-122.03010#map=16/37.33167/-122.03010"
+				},
+				"UN_M49": {
+					"regions": {
+						"AMERICAS": "019",
+						"NORTHERN_AMERICA": "021",
+						"US": "840",
+						"WORLD": "001"
+					},
+					"statistical_groupings": [
+						"MEDC"
+					]
+				},
+				"callingcode": 1,
+				"currency": {
+					"alternate_symbols": [
+						"US$"
+					],
+					"decimal_mark": ".",
+					"disambiguate_symbol": "US$",
+					"html_entity": "$",
+					"iso_code": "USD",
+					"iso_numeric": "840",
+					"name": "United States Dollar",
+					"smallest_denomination": 1,
+					"subunit": "Cent",
+					"subunit_to_unit": 100,
+					"symbol": "$",
+					"symbol_first": 1,
+					"thousands_separator": ","
+				},
+				"flag": "🇺🇸",
+				"geohash": "9q9hrhh2sxeezrmhvkvp",
+				"qibla": 19.32,
+				"roadinfo": {
+					"drive_on": "right",
+					"road": "Infinite Loop",
+					"speed_in": "mph"
+				},
+				"sun": {
+					"rise": {
+						"apparent": 1690463400,
+						"astronomical": 1690457160,
+						"civil": 1690461660,
+						"nautical": 1690459500
+					},
+					"set": {
+						"apparent": 1690427940,
+						"astronomical": 1690434120,
+						"civil": 1690429680,
+						"nautical": 1690431840
+					}
+				},
+				"timezone": {
+					"name": "America/Los_Angeles",
+					"now_in_dst": 1,
+					"offset_sec": -25200,
+					"offset_string": "-0700",
+					"short_name": "PDT"
+				},
+				"what3words": {
+					"words": "bricks.ground.narrow"
+				}
+			},
+			"bounds": {
+				"northeast": {
+					"lat": 37.3321649,
+					"lng": -122.0298245
+				},
+				"southwest": {
+					"lat": 37.3311957,
+					"lng": -122.0305543
+				}
+			},
+			"components": {
+				"ISO_3166-1_alpha-2": "US",
+				"ISO_3166-1_alpha-3": "USA",
+				"ISO_3166-2": [
+					"US-CA"
+				],
+				"_category": "building",
+				"_type": "building",
+				"city": "Cupertino",
+				"commercial": "Apple Campus",
+				"continent": "North America",
+				"country": "United States",
+				"country_code": "us",
+				"county": "Santa Clara County",
+				"house_number": "1",
+				"office": "Infinite Loop 1",
+				"postcode": "95014",
+				"road": "Infinite Loop",
+				"state": "California",
+				"state_code": "CA"
+			},
+			"confidence": 10,
+			"formatted": "Infinite Loop 1, 1 Infinite Loop, Cupertino, CA 95014, United States of America",
+			"geometry": {
+				"lat": 37.3316697,
+				"lng": -122.0300982
+			}
+		},
+		{
+			"annotations": {
+				"DMS": {
+					"lat": "37° 19' 53.05800'' N",
+					"lng": "122° 1' 49.50660'' W"
+				},
+				"FIPS": {
+					"county": "06085",
+					"state": "06"
+				},
+				"MGRS": "10SEG8589432077",
+				"Maidenhead": "CM87xh69im",
+				"Mercator": {
+					"x": -13584364.049,
+					"y": 4459487.406
+				},
+				"OSM": {
+					"edit_url": "https://www.openstreetmap.org/edit?node=1429477504#map=16/37.33140/-122.03042",
+					"note_url": "https://www.openstreetmap.org/note/new#map=16/37.33140/-122.03042&layers=N",
+					"url": "https://www.openstreetmap.org/?mlat=37.33140&mlon=-122.03042#map=16/37.33140/-122.03042"
+				},
+				"UN_M49": {
+					"regions": {
+						"AMERICAS": "019",
+						"NORTHERN_AMERICA": "021",
+						"US": "840",
+						"WORLD": "001"
+					},
+					"statistical_groupings": [
+						"MEDC"
+					]
+				},
+				"callingcode": 1,
+				"currency": {
+					"alternate_symbols": [
+						"US$"
+					],
+					"decimal_mark": ".",
+					"disambiguate_symbol": "US$",
+					"html_entity": "$",
+					"iso_code": "USD",
+					"iso_numeric": "840",
+					"name": "United States Dollar",
+					"smallest_denomination": 1,
+					"subunit": "Cent",
+					"subunit_to_unit": 100,
+					"symbol": "$",
+					"symbol_first": 1,
+					"thousands_separator": ","
+				},
+				"flag": "🇺🇸",
+				"geohash": "9q9hr5upjnkbuz3zfxhk",
+				"qibla": 19.32,
+				"roadinfo": {
+					"drive_on": "right",
+					"road": "Infinite Loop",
+					"speed_in": "mph"
+				},
+				"sun": {
+					"rise": {
+						"apparent": 1690463400,
+						"astronomical": 1690457160,
+						"civil": 1690461660,
+						"nautical": 1690459500
+					},
+					"set": {
+						"apparent": 1690427940,
+						"astronomical": 1690434120,
+						"civil": 1690429680,
+						"nautical": 1690431840
+					}
+				},
+				"timezone": {
+					"name": "America/Los_Angeles",
+					"now_in_dst": 1,
+					"offset_sec": -25200,
+					"offset_string": "-0700",
+					"short_name": "PDT"
+				},
+				"what3words": {
+					"words": "spent.total.maybe"
+				}
+			},
+			"bounds": {
+				"northeast": {
+					"lat": 37.331455,
+					"lng": -122.0303685
+				},
+				"southwest": {
+					"lat": 37.331355,
+					"lng": -122.0304685
+				}
+			},
+			"components": {
+				"ISO_3166-1_alpha-2": "US",
+				"ISO_3166-1_alpha-3": "USA",
+				"ISO_3166-2": [
+					"US-CA"
+				],
+				"_category": "commerce",
+				"_type": "shop",
+				"city": "Cupertino",
+				"commercial": "Apple Campus",
+				"continent": "North America",
+				"country": "United States",
+				"country_code": "us",
+				"county": "Santa Clara County",
+				"house_number": "1",
+				"postcode": "95014",
+				"road": "Infinite Loop",
+				"shop": "Apple Infinite Loop",
+				"state": "California",
+				"state_code": "CA"
+			},
+			"confidence": 9,
+			"formatted": "Apple Infinite Loop, 1 Infinite Loop, Cupertino, CA 95014, United States of America",
+			"geometry": {
+				"lat": 37.331405,
+				"lng": -122.0304185
+			}
+		},
+		{
+			"annotations": {
+				"DMS": {
+					"lat": "37° 19' 54.45480'' N",
+					"lng": "122° 1' 50.29320'' W"
+				},
+				"FIPS": {
+					"county": "06085",
+					"state": "06"
+				},
+				"MGRS": "10SEG8587432120",
+				"Maidenhead": "CM87xh69hp",
+				"Mercator": {
+					"x": -13584388.372,
+					"y": 4459541.496
+				},
+				"OSM": {
+					"edit_url": "https://www.openstreetmap.org/edit?way=8955684#map=16/37.33179/-122.03064",
+					"note_url": "https://www.openstreetmap.org/note/new#map=16/37.33179/-122.03064&layers=N",
+					"url": "https://www.openstreetmap.org/?mlat=37.33179&mlon=-122.03064#map=16/37.33179/-122.03064"
+				},
+				"UN_M49": {
+					"regions": {
+						"AMERICAS": "019",
+						"NORTHERN_AMERICA": "021",
+						"US": "840",
+						"WORLD": "001"
+					},
+					"statistical_groupings": [
+						"MEDC"
+					]
+				},
+				"callingcode": 1,
+				"currency": {
+					"alternate_symbols": [
+						"US$"
+					],
+					"decimal_mark": ".",
+					"disambiguate_symbol": "US$",
+					"html_entity": "$",
+					"iso_code": "USD",
+					"iso_numeric": "840",
+					"name": "United States Dollar",
+					"smallest_denomination": 1,
+					"subunit": "Cent",
+					"subunit_to_unit": 100,
+					"symbol": "$",
+					"symbol_first": 1,
+					"thousands_separator": ","
+				},
+				"flag": "🇺🇸",
+				"geohash": "9q9hrhh12n9grpy4qgfg",
+				"qibla": 19.32,
+				"roadinfo": {
+					"drive_on": "right",
+					"road": "Infinite Loop",
+					"speed_in": "mph"
+				},
+				"sun": {
+					"rise": {
+						"apparent": 1690463400,
+						"astronomical": 1690457160,
+						"civil": 1690461660,
+						"nautical": 1690459500
+					},
+					"set": {
+						"apparent": 1690427940,
+						"astronomical": 1690434120,
+						"civil": 1690429680,
+						"nautical": 1690431840
+					}
+				},
+				"timezone": {
+					"name": "America/Los_Angeles",
+					"now_in_dst": 1,
+					"offset_sec": -25200,
+					"offset_string": "-0700",
+					"short_name": "PDT"
+				},
+				"what3words": {
+					"words": "globe.fonts.flame"
+				}
+			},
+			"bounds": {
+				"northeast": {
+					"lat": 37.331843,
+					"lng": -122.030587
+				},
+				"southwest": {
+					"lat": 37.331743,
+					"lng": -122.030687
+				}
+			},
+			"components": {
+				"ISO_3166-1_alpha-2": "US",
+				"ISO_3166-1_alpha-3": "USA",
+				"ISO_3166-2": [
+					"US-CA"
+				],
+				"_category": "building",
+				"_type": "building",
+				"city": "Cupertino",
+				"commercial": "Apple Campus",
+				"continent": "North America",
+				"country": "United States",
+				"country_code": "us",
+				"county": "Santa Clara County",
+				"house_number": "1",
+				"postcode": "95014",
+				"road": "Infinite Loop",
+				"state": "California",
+				"state_code": "CA"
+			},
+			"confidence": 10,
+			"formatted": "1 Infinite Loop, Cupertino, CA 95014, United States of America",
+			"geometry": {
+				"lat": 37.331793,
+				"lng": -122.030637
+			}
+		},
+		{
+			"annotations": {
+				"DMS": {
+					"lat": "37° 19' 49.94040'' N",
+					"lng": "122° 1' 44.83200'' W"
+				},
+				"FIPS": {
+					"state": "06"
+				},
+				"MGRS": "10SEG8601031983",
+				"Maidenhead": "CM87xh69mh",
+				"Mercator": {
+					"x": -13584219.5,
+					"y": 4459366.682
+				},
+				"OSM": {
+					"note_url": "https://www.openstreetmap.org/note/new#map=16/37.33054/-122.02912&layers=N",
+					"url": "https://www.openstreetmap.org/?mlat=37.33054&mlon=-122.02912#map=16/37.33054/-122.02912"
+				},
+				"UN_M49": {
+					"regions": {
+						"AMERICAS": "019",
+						"NORTHERN_AMERICA": "021",
+						"US": "840",
+						"WORLD": "001"
+					},
+					"statistical_groupings": [
+						"MEDC"
+					]
+				},
+				"callingcode": 1,
+				"currency": {
+					"alternate_symbols": [
+						"US$"
+					],
+					"decimal_mark": ".",
+					"disambiguate_symbol": "US$",
+					"html_entity": "$",
+					"iso_code": "USD",
+					"iso_numeric": "840",
+					"name": "United States Dollar",
+					"smallest_denomination": 1,
+					"subunit": "Cent",
+					"subunit_to_unit": 100,
+					"symbol": "$",
+					"symbol_first": 1,
+					"thousands_separator": ","
+				},
+				"flag": "🇺🇸",
+				"geohash": "9q9hr5v45kv5h4zpm7xu",
+				"qibla": 19.32,
+				"roadinfo": {
+					"drive_on": "right",
+					"road": "Infinite Loop",
+					"speed_in": "mph"
+				},
+				"sun": {
+					"rise": {
+						"apparent": 1690463400,
+						"astronomical": 1690457160,
+						"civil": 1690461660,
+						"nautical": 1690459500
+					},
+					"set": {
+						"apparent": 1690427940,
+						"astronomical": 1690434120,
+						"civil": 1690429680,
+						"nautical": 1690431840
+					}
+				},
+				"timezone": {
+					"name": "America/Los_Angeles",
+					"now_in_dst": 1,
+					"offset_sec": -25200,
+					"offset_string": "-0700",
+					"short_name": "PDT"
+				},
+				"what3words": {
+					"words": "healthier.dairy.dome"
+				}
+			},
+			"components": {
+				"ISO_3166-1_alpha-2": "US",
+				"ISO_3166-1_alpha-3": "USA",
+				"ISO_3166-2": [
+					"US-CA"
+				],
+				"_category": "road",
+				"_type": "road",
+				"continent": "North America",
+				"country": "United States of America",
+				"country_code": "us",
+				"road": "Infinite Loop",
+				"state": "California",
+				"state_code": "CA",
+				"town": "Cupertino"
+			},
+			"confidence": 9,
+			"formatted": "Infinite Loop, Cupertino, CA, United States of America",
+			"geometry": {
+				"lat": 37.330539,
+				"lng": -122.02912
+			}
+		},
+		{
+			"annotations": {
+				"DMS": {
+					"lat": "37° 19' 22.80000'' N",
+					"lng": "122° 1' 55.84800'' W"
+				},
+				"FIPS": {
+					"county": "06085",
+					"state": "06"
+				},
+				"MGRS": "10SEG8574831143",
+				"Maidenhead": "CM87xh67dm",
+				"Mercator": {
+					"x": -13584560.138,
+					"y": 4458315.768
+				},
+				"OSM": {
+					"note_url": "https://www.openstreetmap.org/note/new#map=16/37.32300/-122.03218&layers=N",
+					"url": "https://www.openstreetmap.org/?mlat=37.32300&mlon=-122.03218#map=16/37.32300/-122.03218"
+				},
+				"UN_M49": {
+					"regions": {
+						"AMERICAS": "019",
+						"NORTHERN_AMERICA": "021",
+						"US": "840",
+						"WORLD": "001"
+					},
+					"statistical_groupings": [
+						"MEDC"
+					]
+				},
+				"callingcode": 1,
+				"currency": {
+					"alternate_symbols": [
+						"US$"
+					],
+					"decimal_mark": ".",
+					"disambiguate_symbol": "US$",
+					"html_entity": "$",
+					"iso_code": "USD",
+					"iso_numeric": "840",
+					"name": "United States Dollar",
+					"smallest_denomination": 1,
+					"subunit": "Cent",
+					"subunit_to_unit": 100,
+					"symbol": "$",
+					"symbol_first": 1,
+					"thousands_separator": ","
+				},
+				"flag": "🇺🇸",
+				"geohash": "9q9hr46yhp7rjy8gqg3d",
+				"qibla": 19.32,
+				"roadinfo": {
+					"drive_on": "right",
+					"speed_in": "mph"
+				},
+				"sun": {
+					"rise": {
+						"apparent": 1690463400,
+						"astronomical": 1690457160,
+						"civil": 1690461660,
+						"nautical": 1690459500
+					},
+					"set": {
+						"apparent": 1690427940,
+						"astronomical": 1690434120,
+						"civil": 1690429680,
+						"nautical": 1690431840
+					}
+				},
+				"timezone": {
+					"name": "America/Los_Angeles",
+					"now_in_dst": 1,
+					"offset_sec": -25200,
+					"offset_string": "-0700",
+					"short_name": "PDT"
+				},
+				"what3words": {
+					"words": "loved.values.fans"
+				}
+			},
+			"bounds": {
+				"northeast": {
+					"lat": 37.34052,
+					"lng": -121.995833
+				},
+				"southwest": {
+					"lat": 37.27846,
+					"lng": -122.092176
+				}
+			},
+			"components": {
+				"ISO_3166-1_alpha-2": "US",
+				"ISO_3166-1_alpha-3": "USA",
+				"ISO_3166-2": [
+					"US-CA"
+				],
+				"_category": "place",
+				"_type": "city",
+				"continent": "North America",
+				"country": "United States of America",
+				"country_code": "us",
+				"county": "Santa Clara County",
+				"state": "California",
+				"state_code": "CA",
+				"town": "Cupertino"
+			},
+			"confidence": 7,
+			"formatted": "Cupertino, California, United States of America",
+			"geometry": {
+				"lat": 37.323,
+				"lng": -122.03218
+			}
+		}
+	],
+	"status": {
+		"code": 200,
+		"message": "OK"
+	},
+	"stay_informed": {
+		"blog": "https://blog.opencagedata.com",
+		"mastodon": "https://en.osm.town/@opencage",
+		"twitter": "https://twitter.com/OpenCage"
+	},
+	"thanks": "For using an OpenCage API",
+	"timestamp": {
+		"created_http": "Thu, 27 Jul 2023 12:56:02 GMT",
+		"created_unix": 1690462562
+	},
+	"total_results": 5
+}

@@ -5,6 +5,7 @@
 - Ruby
 - Redis
 - OpenWeatherMap API key: https://openweathermap.org/
+- OpenCage API key: https://opencagedata.com/
 
 ## ⚡️ Setup
 
@@ -16,6 +17,12 @@ Add your OpenWeatherMap API key to the `.env.local` file
 
 ```bash
 OPEN_WEATHER_API_KEY=REPLACE_ME
+```
+
+Add your OpenCage API key to the `.env.local` file
+
+```bash
+OPEN_CAGE_API_KEY=REPLACE_ME
 ```
 
 ## 🚀 Running

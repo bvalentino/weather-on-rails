@@ -175,6 +175,7 @@ GEM
       faraday (>= 1.0.0)
       faraday_middleware
       hashie
+    opencage-geocoder (3.1.0)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -326,6 +327,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   open-weather-ruby-client
+  opencage-geocoder
   puma (~> 5.0)
   rails (~> 7.0.6)
   redis (~> 4.0)
