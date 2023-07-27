@@ -1,37 +1,49 @@
 # frozen_string_literal: true
 
-# Fetches the current weather for a given zip code and country code.
-# Uses the OpenWeather API, and caches the results for 30 minutes.
+# This service object is used to fetch the current weather for a given zip code
+# (if present), city, and country code.
+# It uses the OpenWeather API, and caches the results for 30 minutes.
+# If the API key is invalid, or the API returns no results for the given
+# location, the `outcome` will be invalid.
+#
 # Example usage:
 #   outcome = Weather::Fetch.run(zip_code: '95014')
-#   current_weather = outcome.result
-#   outcome.was_cached
-#   outcome.last_updated_at
+#   current_weather = outcome.result # => ['main', ...]
+#   outcome.was_cached # => false
+#   outcome.last_updated_at # => 2023-01-01 12:00:00 -0800
 #
 module Weather
   class Fetch < ActiveInteraction::Base
-    string :zip_code
+    string :zip_code, default: nil
+    string :city, default: nil
     string :country_code, default: 'us'
 
     attr_reader :was_cached, :last_updated_at
 
     def execute
       fetch_cached_current_weather || fetch_current_weather_and_cache
+    rescue OpenWeather::Errors::Fault => e
+      errors.add(:base, e.message['message'])
+    rescue Faraday::ResourceNotFound => e
+      errors.add(:base, e.message)
     end
 
     private
 
       # Returns the cache key for the current weather, based on the zip code and country code.
       def cache_key
-        "weather/#{country_code.upcase}/#{zip_code.strip}"
+        "weather/#{country_code.upcase}/#{zip_code || city}"
       end
 
       # Requests the current weather from the OpenWeather API.
       def fetch_current_weather
-        OpenWeather::Client.new.current_weather(
+        location = {
+          city:,
           zip: zip_code,
           country: country_code
-        )
+        }.compact
+
+        OpenWeather::Client.new.current_weather(location)
       end
 
       # Returns the current weather from the cache, if it exists.
