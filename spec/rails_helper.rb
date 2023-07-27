@@ -63,5 +63,7 @@ RSpec.configure do |config|
     OpenWeather::Client.configure do |c|
       c.api_key = 'dummy-api-key'
     end
+
+    ENV['OPEN_CAGE_API_KEY'] ||= 'dummy-api-key'
   end
 end
