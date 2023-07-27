@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 describe 'User visits home page' do
-  it 'has a form to enter a zip code' do
+  it 'has a form to enter the address' do
     visit root_path
 
-    expect(page).to have_field('zip_code')
+    expect(page).to have_field('address')
   end
 end

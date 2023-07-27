@@ -1,9 +1,10 @@
 en:
   home:
-    index:
+    search:
       form:
-        zip_code:
-          label: Enter your zip code
+        address:
+          label: Location
+          placeholder: Enter address, city, state, or zip code
         submit: Search
   weathers:
     current:
@@ -12,3 +13,10 @@ en:
       feels_like: Feels like
       humidity: Humidity
       pressure: Pressure
+      timestamp:
+        cached: Weather information last updated %{time} ago
+        not_cached: Weather information up to date
+    not_found:
+      title: Weather information not found
+  shared:
+    loading: Loading
