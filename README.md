@@ -1,5 +1,7 @@
 # WeatherOnRails
 
+[![CI](https://github.com/bvalentino/weather-on-rails/actions/workflows/.ruby.yml/badge.svg)](https://github.com/bvalentino/weather-on-rails/actions/workflows/.ruby.yml)
+
 Demo: https://bvalentino-weather-on-rails-7b37270d69bc.herokuapp.com/
 
 ## 📦 Requirements
