@@ -28,7 +28,7 @@ OPEN_CAGE_API_KEY=REPLACE_ME
 ## 🚀 Running
 
 ```bash
-$ bin/rails s
+$ bin/dev
 ```
 
 ## 🧪 Testing

@@ -7,20 +7,7 @@ describe 'User visits current weather page' do
   let(:country_code) { 'us' }
   let(:api_key) { OpenWeather::Client.new.api_key }
   let(:api_response) do
-    {
-      'coord' => { 'lon' => -122.0449, 'lat' => 37.318 },
-      'weather' => [],
-      'base' => 'stations',
-      'main' => { 'temp' => 294.49, 'feels_like' => 298.48, 'temp_min' => 287.88, 'temp_max' => 298.13,
-                  'pressure' => 1015, 'humidity' => 68 },
-      'visibility' => 10_000,
-      'wind' => { 'speed' => 3.6, 'deg' => 360 },
-      'clouds' => { 'all' => 20 },
-      'timezone' => -25_200,
-      'id' => 0,
-      'name' => 'Cupertino',
-      'cod' => 200
-    }
+    JSON.parse(Rails.root.join('spec/fixtures/open_weather/current_weather/valid.json').read)
   end
 
   before do
@@ -37,8 +24,8 @@ describe 'User visits current weather page' do
       visit current_weather_path(zip_code:, country_code:)
     end
 
-    it 'shows the zip code' do
-      expect(page).to have_text(zip_code)
+    it 'shows the city name' do
+      expect(page).to have_text('Cupertino')
     end
 
     it 'shows the country code' do
@@ -46,23 +33,23 @@ describe 'User visits current weather page' do
     end
 
     it 'shows the current temperate' do
-      expect(page).to have_text('Current temperature: 70 °F')
+      expect(page).to have_text('57 °F')
     end
 
     it 'shows the high and low' do
-      expect(page).to have_text('High/Low: 77 °F / 59 °F')
+      expect(page).to have_text("High/Low\n60 °F / 51 °F")
     end
 
     it 'shows the feels like temperature' do
-      expect(page).to have_text('Feels like: 78 °F')
+      expect(page).to have_text("Feels like\n56 °F")
     end
 
     it 'shows the humidity' do
-      expect(page).to have_text('Humidity: 68%')
+      expect(page).to have_text("Humidity\n84%")
     end
 
     it 'shows the pressure' do
-      expect(page).to have_text('Pressure: 1015 mb')
+      expect(page).to have_text("Pressure\n1014 mb")
     end
 
     it 'shows that the data was not cached' do

@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   resource :weather, only: [:show] do
-    get 'current/:zip_code/:country_code', action: :current, as: :current
+    get :current
   end
 
   root "home#index"
