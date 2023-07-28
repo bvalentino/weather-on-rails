@@ -148,3 +148,4 @@ This approach, which does not require any JavaScript, provides immediate feedbac
 - Use websockets to push the weather information from a background job (e.g. Sidekiq).
 - Periodically pre-fetch the weather information of the most popular locations.
 - Use the browser's geolocation API to automatically retrieve the weather information for the user's location.
+- Further encapsulate the response for geocode and weather information.
