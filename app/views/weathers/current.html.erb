@@ -3,37 +3,47 @@
     <div class="p-8">
       <div class="text-center">
         <div class="text-xl">
-          <%= @current_weather.name %>, <%= @current_weather.sys.country %>
+          <%= @weather.location %>
         </div>
         <div class="text-6xl font-medium">
-          <%= number_with_precision @current_weather.main.temp_f, precision: 0 %> °F
+          <%= number_with_precision @weather.temperature, precision: 0 %>
+          °<%= @weather.temperature_unit.upcase %>
         </div>
       </div>
       <div class="mt-5 mx-auto max-w-sm divide-y divide-gray-100">
         <div class="flex justify-between space-x-3 py-4">
           <div class="font-medium"><%= t '.high_low' %></div>
           <div>
-            <%= number_with_precision @current_weather.main.temp_max_f, precision: 0 %> °F
+            <%= number_with_precision @weather.temperature_max, precision: 0 %>
+            °<%= @weather.temperature_unit.upcase %>
             /
-            <%= number_with_precision @current_weather.main.temp_min_f, precision: 0 %> °F
+            <%= number_with_precision @weather.temperature_min, precision: 0 %>
+            °<%= @weather.temperature_unit.upcase %>
           </div>
         </div>
         <div class="flex justify-between space-x-3 py-4">
           <div class="font-medium"><%= t '.feels_like' %></div>
-          <div><%= number_with_precision @current_weather.main.feels_like_f, precision: 0 %> °F</div>
+          <div>
+            <%= number_with_precision @weather.feels_like, precision: 0 %>
+            °<%= @weather.temperature_unit.upcase %>
+          </div>
         </div>
         <div class="flex justify-between space-x-3 py-4">
           <div class="font-medium"><%= t '.humidity' %></div>
-          <div><%= @current_weather.main.humidity %>%</div>
+          <div>
+            <%= @weather.humidity %>%
+          </div>
         </div>
         <div class="flex justify-between space-x-3 py-4">
           <div class="font-medium"><%= t '.pressure' %></div>
-          <div><%= @current_weather.main.pressure %> mb</div>
+          <div>
+            <%= @weather.pressure %> mb
+          </div>
         </div>
       </div>
       <div class="mt-5 text-center text-sm text-gray-500">
-        <% if @outcome.was_cached %>
-          <%= t '.timestamp.cached', time: time_ago_in_words(@outcome.last_updated_at) %>
+        <% if @weather.was_cached %>
+          <%= t '.timestamp.cached', time: time_ago_in_words(@weather.last_updated_at) %>
         <% else %>
           <%= t '.timestamp.not_cached' %>
         <% end %>

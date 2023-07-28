@@ -1,48 +1,35 @@
 # frozen_string_literal: true
 
 class WeathersController < ApplicationController
-  DEFAULT_COUNTRY_CODE = 'US'
-
   def show
-    set_geocode
+    outcome = Geocoder::Geocode.run(address:)
+    return render('weathers/errors/geocode_not_found') if outcome.invalid?
+
+    @geocode = outcome.result
   end
 
   def current
-    set_zip_code
-    set_city
-    set_country_code
+    outcome = Weather::Fetch.run(zip_code:, city:, country_code:)
+    return render('weathers/errors/weather_not_found') if outcome.invalid?
 
-    @outcome = Weather::Fetch.run(
-      zip_code: @zip_code,
-      city: @city,
-      country_code: @country_code
-    )
-    return render 'not_found' if @outcome.invalid?
-
-    @current_weather = @outcome.result
+    @weather = outcome.result
   end
 
   private
 
-    def set_address
-      @address = params[:address]
+    def address
+      @address ||= params[:address]
     end
 
-    def set_zip_code
-      @zip_code = params[:zip_code]
+    def zip_code
+      @zip_code ||= params[:zip_code]
     end
 
-    def set_city
-      @city = params[:city]
+    def city
+      @city ||= params[:city]
     end
 
-    def set_geocode
-      set_address
-
-      @geocode = Geocoder::Geocode.run(address: @address)
-    end
-
-    def set_country_code
-      @country_code = params[:country_code].presence || DEFAULT_COUNTRY_CODE
+    def country_code
+      @country_code ||= params[:country_code]
     end
 end
