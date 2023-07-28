@@ -16,7 +16,10 @@ en:
       timestamp:
         cached: Weather information last updated %{time} ago
         not_cached: Weather information up to date
-    not_found:
-      title: Weather information not found
+    errors:
+      geocode_not_found:
+        title: Location not found
+      weather_not_found:
+        title: Weather information not found
   shared:
     loading: Loading

@@ -6,6 +6,8 @@
 # If the API key is invalid, or the API returns no results for the given
 # location, the `outcome` will be invalid.
 #
+# The response is wrapped in a decorator object, `WeatherDecorator`.
+#
 # Example usage:
 #   outcome = Weather::Fetch.run(zip_code: '95014')
 #   current_weather = outcome.result # => ['main', ...]
@@ -21,7 +23,13 @@ module Weather
     attr_reader :was_cached, :last_updated_at
 
     def execute
-      fetch_cached_current_weather || fetch_current_weather_and_cache
+      response = fetch_cached_current_weather || fetch_current_weather_and_cache
+
+      WeatherDecorator.new(
+        response,
+        was_cached: @was_cached,
+        last_updated_at: @last_updated_at
+      )
     rescue OpenWeather::Errors::Fault => e
       errors.add(:base, e.message['message'])
     rescue Faraday::ResourceNotFound => e

@@ -139,6 +139,15 @@ When these service objects are run, they provide a `valid?` method to check if t
 
 In terms of naming conventions, the service objects are named after the action they perform, and are located in a directory named after the resource (or namespace) they act upon. For example, `Weather::Fetch` is responsible for fetching weather information, and is located in the `app/interactions/weather` directory.
 
+### Decorators
+
+There are two decorators that wrap the response of the external services:
+
+- `GeocodeDecorator`: decorates the response of the OpenCage Geocoder API.
+- `WeatherDecorator`: decorates the response of the OpenWeather API.
+
+These decorators, which are located in the `app/decorators` directory, are responsible for transforming the API responses into a format that is easier to consume by the views. They inherit from `SimpleDelegator`, which allows to easily override the methods of the decorated object (which, in this case, are API responses).
+
 ### Async rendering
 
 Hotwire is used to asynchronously fetch the geocode and weather information for a given address.
@@ -152,4 +161,3 @@ This approach, which does not require any JavaScript, provides immediate feedbac
 - Use websockets to push the weather information from a background job (e.g. Sidekiq).
 - Periodically pre-fetch the weather information of the most popular locations.
 - Use the browser's geolocation API to automatically retrieve the weather information for the user's location.
-- Further encapsulate the response for geocode and weather information.

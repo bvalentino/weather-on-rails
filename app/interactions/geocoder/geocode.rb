@@ -6,41 +6,30 @@
 # The geocode data is cached to prevent excessive API calls.
 # If the API returns no results for the address, the `outcome` will be invalid.
 #
-# This service object also provides additional helper methods for `zip_code`,
-# `city`, and `country_code`.
+# The response is wrapped in a decorator object, `GeocodeDecoratorDecorator`.
 #
 # Example usage:
 #   outcome = Geocoder::Geocode.run(address: '1 Infinite Loop, Cupertino, CA')
 #   outcome.valid? # => true
-#   outcome.zip_code # => '95014'
-#   outcome.city # => 'Cupertino'
-#   outcome.country_code # => 'us'
+#   outcome.result.zip_code # => '95014'
+#   outcome.result.city # => 'Cupertino'
+#   outcome.result.country_code # => 'us'
 #
 module Geocoder
   class Geocode < ActiveInteraction::Base
     string :address
 
     def execute
-      @geocode = Rails.cache.fetch(cache_key) do
+      response = Rails.cache.fetch(cache_key) do
         response = geocoder.geocode(address)
         raise NoGeocodeDataError, "No geocode data available for #{address}" if response.blank?
 
         response.first
       end
+
+      GeocodeDecorator.new(response)
     rescue NoGeocodeDataError => e
       errors.add(:base, e.message)
-    end
-
-    def zip_code
-      @geocode&.components&.fetch('postcode', nil)
-    end
-
-    def city
-      @geocode&.components&.fetch('city', nil)
-    end
-
-    def country_code
-      @geocode&.components&.fetch('country_code', nil)
     end
 
     private

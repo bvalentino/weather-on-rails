@@ -20,19 +20,19 @@ RSpec.describe Geocoder::Geocode do
   it '#zip_code' do
     outcome = described_class.run(address:)
 
-    expect(outcome.zip_code).to eq('95014')
+    expect(outcome.result.zip_code).to eq('95014')
   end
 
   it '#city' do
     outcome = described_class.run(address:)
 
-    expect(outcome.city).to eq('Cupertino')
+    expect(outcome.result.city).to eq('Cupertino')
   end
 
   it '#country_code' do
     outcome = described_class.run(address:)
 
-    expect(outcome.country_code).to eq('us')
+    expect(outcome.result.country_code).to eq('us')
   end
 
   context 'when the API key is invalid' do
@@ -43,24 +43,6 @@ RSpec.describe Geocoder::Geocode do
     it 'is invalid' do
       expect(described_class.run(address:)).to be_invalid
     end
-
-    it '#zip_code' do
-      outcome = described_class.run(address:)
-
-      expect(outcome.zip_code).to be_nil
-    end
-
-    it '#city' do
-      outcome = described_class.run(address:)
-
-      expect(outcome.city).to be_nil
-    end
-
-    it '#country_code' do
-      outcome = described_class.run(address:)
-
-      expect(outcome.country_code).to be_nil
-    end
   end
 
   context 'when the address is invalid' do
@@ -70,24 +52,6 @@ RSpec.describe Geocoder::Geocode do
 
     it 'is invalid' do
       expect(described_class.run(address:)).to be_invalid
-    end
-
-    it '#zip_code' do
-      outcome = described_class.run(address:)
-
-      expect(outcome.zip_code).to be_nil
-    end
-
-    it '#city' do
-      outcome = described_class.run(address:)
-
-      expect(outcome.city).to be_nil
-    end
-
-    it '#country_code' do
-      outcome = described_class.run(address:)
-
-      expect(outcome.country_code).to be_nil
     end
   end
 end
