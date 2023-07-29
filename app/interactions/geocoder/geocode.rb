@@ -19,6 +19,8 @@ module Geocoder
   class Geocode < ActiveInteraction::Base
     string :address
 
+    validates :address, presence: true
+
     def execute
       response = Rails.cache.fetch(cache_key) do
         response = geocoder.geocode(address)
