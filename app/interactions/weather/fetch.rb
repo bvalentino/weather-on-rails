@@ -20,6 +20,10 @@ module Weather
     string :city, default: nil
     string :country_code, default: 'us'
 
+    validates :zip_code, presence: true, if: -> { city.blank? }
+    validates :city, presence: true, if: -> { zip_code.blank? }
+    validates :country_code, presence: true
+
     attr_reader :was_cached, :last_updated_at
 
     def execute

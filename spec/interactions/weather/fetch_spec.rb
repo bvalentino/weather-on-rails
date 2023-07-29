@@ -7,6 +7,14 @@ RSpec.describe Weather::Fetch do
   let(:city) { 'Cupertino' }
   let(:api_key) { OpenWeather::Client.new.api_key }
 
+  describe 'validations' do
+    it 'is invalid when both zip_code and city are blank' do
+      outcome = described_class.run(zip_code: nil, city: nil)
+
+      expect(outcome).to be_invalid
+    end
+  end
+
   context 'when both zip_code and city are passed' do
     let(:api_response) do
       JSON.parse(Rails.root.join('spec/fixtures/open_weather/current_weather/valid.json').read)
