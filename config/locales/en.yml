@@ -1,10 +1,11 @@
 en:
   home:
     search:
+      title: Current weather
       form:
         address:
           label: Location
-          placeholder: Enter address, city, state, or zip code
+          placeholder: Enter address, city, and/or zip code
         submit: Search
   weathers:
     current:
